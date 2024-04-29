@@ -1,0 +1,7 @@
+/data/*
+/Datasets/*
+/pytorch-mask-r-cnn-instance-segmentation/*
+
+.python-version
+
+*.ttf
