@@ -62,8 +62,8 @@ from tqdm.auto import tqdm
 seed = 1234
 set_seed(seed)
 
-# device = get_torch_device()
-device = 'cpu'
+device = get_torch_device()
+# device = 'cpu'
 dtype = torch.float32
 
 # Prepend a `background` class to the list of class names
@@ -203,19 +203,10 @@ class CratersDataset(Dataset):
                 target["boxes"].append(box)
                 target["labels"].append(label)
 
-
-        
-        # Convert the class labels to indices
         labels_tensor = torch.Tensor(target['labels']).to(dtype=torch.int64)
-
-        # masks_tensor = torch.stack([torch.Tensor(mask) for mask in target['masks']])
-
-        # Generate bounding box annotations from segmentation masks
-        # bboxes_tensor = torch.Tensor(target['boxes']).to(dtype=torch.float32)
         
         masks = Mask(torch.concat([Mask(transforms.PILToTensor()(mask_img), dtype=torch.bool) for mask_img in target["masks"]]))
 
-        # Generate bounding box annotations from segmentation masks
         bboxes = BoundingBoxes(data=torchvision.ops.masks_to_boxes(masks), format='xyxy', canvas_size=image.size[::-1])
 
         
@@ -285,7 +276,7 @@ train_dataset = CratersDataset(train_keys[:5], images_ellipses_dir, img_dict, cl
 valid_dataset = CratersDataset(val_keys[:2], images_ellipses_dir, img_dict, class_to_idx, valid_tfms)
 
 # Set the training batch size
-bs = 1
+bs = 4
 
 # Set the number of worker processes for loading data.
 num_workers = multiprocessing.cpu_count()//2
