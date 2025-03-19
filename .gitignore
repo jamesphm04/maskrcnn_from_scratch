@@ -1,9 +1,11 @@
 /data/*
 /Datasets/*
 /pytorch-mask-r-cnn-instance-segmentation/*
+/pytorch-mask-r-cnn-instance-segmentation-fda/*
 
 .python-version
 
 *.ttf
 /pangu/*
 /pytorch_grad_cam/*
+/checkpoint/*
