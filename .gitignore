@@ -9,3 +9,5 @@
 /pangu/*
 /pytorch_grad_cam/*
 /checkpoint/*
+
+.venv/*
