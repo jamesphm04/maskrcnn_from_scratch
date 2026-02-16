@@ -314,7 +314,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Ky Cuong Pham**  
 The University of Adelaide  
-Email: your.email@adelaide.edu.au  
+Email: a1906313@adelaide.edu.au  
 GitHub: [@jamesphm04](https://github.com/jamesphm04)
 
 ---
